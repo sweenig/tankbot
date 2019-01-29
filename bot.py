@@ -25,7 +25,13 @@ actions = {
     51: dofight,
     121: doyes,
     110: dono,
-    32: doblank
+    32: doblank,
+    111: dowhoa,
+    47: dowhat,
+    104: dohi,
+    92: gocrazy,
+    114: rainbow,
+    116: thinking
 }
 
 def main(window):

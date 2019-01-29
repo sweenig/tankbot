@@ -25,7 +25,7 @@ faces = {
            ," bb  bb "
            ," bb  bb "
            ,"        "
-           ,"   bb   "
+           ,"   oo   "
            ,"b      b"
            ," bbbbbb "],
   "frown": ["yy    yy"
@@ -41,26 +41,59 @@ faces = {
            ," bb     "
            ," bb  bb "
            ,"        "
-           ,"   bb   "
+           ,"   oo   "
            ,"b      b"
            ," bbbbbb "],
-  "yes":   ["     b b"
-           ,"   oob b"
-           ,"    obbb"
-           ,"gggoo b "
-           ,"  g o b "
-           ,"gggoo   "
-           ,"g       "
-           ,"ggg     "],
-  "no":    ["        "
+  "whoa":  ["yy    yy"
+           ," bb  bb "
+           ," bb  bb "
+           ,"   oo   "
            ,"        "
-           ,"rrr r  r"
-           ,"r r r rr"
-           ,"r r rr r"
-           ,"rrr r  r"
-           ,"        "
-           ,"        "]
-}
+           ,"  bbbb  "
+           ,"  b  b  "
+           ,"  bbbb  "],
+  "hi":    ["        ",
+            ' g g    ',
+            ' g g  g ',
+            ' ggg    ',
+            ' g g  g ',
+            ' g g  g ',
+            '        ',
+            '        '],
+  'no':    ['        ',
+            '        ',
+            'r  r rrr',
+            'rr r r r',
+            'r rr r r',
+            'r  r rrr',
+            '        ',
+            '        '],
+ 'what':   ['   bbb  ',
+            '  b   b ',
+            '      b ',
+            '     b  ',
+            '    b   ',
+            '        ',
+            '   bb   ',
+            '   bb   '],
+ 'yes':    ['b b     ',
+            'b boo   ',
+            'bbbo    ',
+            ' b ooggg',
+            ' b o g  ',
+            '   ooggg',
+            '       g',
+            '     ggg']
+  }
+for key, value in faces.iteritems():
+  if debug: print("Processing: %s" % key)
+  newface = []
+  for row in faces[key]:
+    str = ""
+    for i in row: str = i + str
+    newface.append(str)
+  faces[key] = newface
+if debug: pprint(faces)
 
 def showface(face):
   if debug:
@@ -79,8 +112,39 @@ def showface(face):
 def dosmile(): showface(faces["smile"])
 def dowink(): showface(faces["wink"])
 def dofight(): showface(faces["frown"])
-def doyes(): showface(faces["yes"])
-def dono(): showface(faces["no"])
+def doyes():
+  execfile("demo.py")
+  showface(faces["yes"])
+def dono():
+  execfile("demo.py")
+  showface(faces["no"])
 def doblank(): showface(faces["blank"])
+def dowhoa(): showface(faces["whoa"])
+def dohi(): showface(faces["hi"])
+def dowhat(): showface(faces["what"])
+def gocrazy():
+  i=0
+  while i < 20:
+    showface(faces["smile"])
+    showface(faces["wink"])
+    showface(faces["frown"])
+    showface(faces["yes"])
+    showface(faces["no"])
+    showface(faces["whoa"])
+    showface(faces["hi"])
+    showface(faces["what"])
+    showface(faces["blank"])
+    i += 1
 
+def rainbow():
+  execfile("rainbow.py")
+  showface(faces["blank"])
+
+def thinking():
+  execfile("demo.py")
+  showface(faces["blank"])
+
+
+showface(faces["hi"])
+sleep(3)
 showface(faces["smile"])

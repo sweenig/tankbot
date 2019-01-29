@@ -25,8 +25,8 @@ unicorn.rotation(0)
 unicorn.brightness(0.5)
 width,height=unicorn.get_shape()
 
-
-while True:
+j = 0
+while j < 100:
     rand_mat = numpy.random.rand(width,height)
     for y in range(height):
         for x in range(width):
@@ -40,3 +40,4 @@ while True:
             unicorn.set_pixel(x, y, r, g, b)
     unicorn.show()
     time.sleep(0.01)
+    j += 1

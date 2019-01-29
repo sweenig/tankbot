@@ -1,24 +1,11 @@
 #!/usr/bin/env python
-
 from random import randint
 from time import sleep
-
 import unicornhat as unicorn
-
-print("""Snow
-
-Draws random white pixels to look like a snowstorm.
-
-If you're using a Unicorn HAT and only half the screen lights up, 
-edit this example and  change 'unicorn.AUTO' to 'unicorn.HAT' below.
-""")
-
 unicorn.set_layout(unicorn.HAT)
-unicorn.rotation(0)
+unicorn.rotation(90)
 unicorn.brightness(0.5)
 width,height=unicorn.get_shape()
-
-
 rows = []
 row_pointer = 0
 
@@ -77,6 +64,8 @@ def step():
 
 
 init()
-while True:
+j = 0
+while j < 50:
     step()
     sleep(0.3)
+    j += 1

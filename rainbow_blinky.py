@@ -38,7 +38,8 @@ def make_gaussian(fwhm):
     gauss = numpy.exp(-4 * numpy.log(2) * ((x - x0) ** 2 + (y - y0) ** 2) / fwhm ** 2)
     return gauss
 
-while True:
+j = 0
+while j <= 3:
     for z in list(range(1, 10)[::-1]) + list(range(1, 10)):
         fwhm = 5.0/z
         gauss = make_gaussian(fwhm)
@@ -61,3 +62,4 @@ while True:
         t = end - start
         if t < 0.04:
             time.sleep(0.04 - t)
+    j += 1
