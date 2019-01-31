@@ -1,3 +1,5 @@
+import demo
+
 # available colors
 colors = {
   " ": (0,0,0),
@@ -99,8 +101,8 @@ def showface(face):
   if debug:
     print("Face:\n")
     pprint(face)
-  for h in range(height):
-    for w in range(width):
+  for h in range(u_height):
+    for w in range(u_width):
       color = face[w][h]
       if debug:
         print("(h,w) = (%s,%s)" % (h,w))
@@ -140,10 +142,21 @@ def rainbow():
   execfile("rainbow.py")
   showface(faces["blank"])
 
-def thinking():
-  execfile("demo.py")
+def doswirl():
+  demo.demo(demo.effects[0],50)
   showface(faces["blank"])
-
+def dochecker():
+  demo.demo(demo.effects[1],50)
+  showface(faces["blank"])
+def doblues_and_twos():
+  demo.demo(demo.effects[2],50)
+  showface(faces["blank"])
+def dorainbow_search():
+  demo.demo(demo.effects[3],50)
+  showface(faces["blank"])
+def dotunnel():
+  demo.demo(demo.effects[4],50)
+  showface(faces["blank"])
 
 showface(faces["hi"])
 sleep(3)
