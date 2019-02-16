@@ -1,8 +1,12 @@
 import curses
 from time import sleep
 debug = False
+
 import unicorn
 unicorn.showface(unicorn.faces["hi"])
+
+import camlights
+
 from gpiozero import CamJamKitRobot
 robot = CamJamKitRobot()
 motoractions = {
@@ -11,6 +15,7 @@ motoractions = {
     curses.KEY_LEFT:  robot.right,
     curses.KEY_RIGHT: robot.left
 }
+
 actions = {}
 actions.update(motoractions)
 actions.update(unicorn.actions)
